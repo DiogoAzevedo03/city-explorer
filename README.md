@@ -1,7 +1,7 @@
 # myflickr
 
 ## concept
-Example web app that consumes the flickr API to search for photos, given keywors, and displays them.
+Example web app that consumes the flickr API to search for photos, given keywords, and displays them.
 
 
 ## topics in this exercise
