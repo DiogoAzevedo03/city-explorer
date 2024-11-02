@@ -1,15 +1,16 @@
 {
-  "name": "myflickr",
+  "name": "cityexplorer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aplicação para explorar informações de cidades",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/http-server -a localhost -p 8000 -c-1"
+    "start": "node node_modules/http-server/bin/http-server -a localhost -p 8000 -c-1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cityexplorer": "file:",
     "http-server": "^14.1.1"
   }
 }

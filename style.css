@@ -1,40 +1,243 @@
+/* Estilos gerais */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
+    background-color: #e9ecef;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
+
+/* Título principal */
+h1 {
+    color: #333;
+    margin: 20px 0;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid #28a745;
+}
+
+
+/* Input de pesquisa */
+#searchInput {
+    width: 50%;
+    padding: 12px;
+    margin: 20px 0;
+    font-size: 1.2em;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput:focus {
+    border-color: #28a745;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+/* Botão de pesquisa */
+#searchBtn {
+    padding: 12px 30px;
+    font-size: 1.2em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 10px;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+}
+
+#searchBtn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Container para os cards */
+#info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 40px auto;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #28a745;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.6s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* Estilo dos cards */
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    flex: 1;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Título dos cards */
+h3 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+/* Texto dos cards */
+p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 8px 0;
+}
+
+/* Bandeira do país */
+#country img {
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fotos */
 #photos {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-}
-.photo {
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    border-style: solid;
-    border-width: 2px;
+    gap: 20px;
+    padding: 20px;
 }
 
-/* make the .full-photo a centerd div floating over other content */
-.full-photo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 600px;
+.photo {
+    width: 160px;
+    height: 160px;
     background-size: cover;
     background-position: center;
-    border-radius: 60px;
-    border-style: solid;
-    border-width: 6px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.photo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #searchInput {
+        width: 80%;
+    }
+
+    #info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #photos {
+        gap: 15px;
+    }
+
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Ajuste para o mapa */
+#geo {
+    height: 300px;
+}
+
+
+#photosTitle {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+#photosTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #28a745;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+#photosTitle.loaded::after {
+    transform: scaleX(1);
+}
+/* Estilo para o contêiner de mensagens de erro */
+.error-container {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.error-container .error-message {
+    margin: 5px 0;
+}
+
+.error-container .error-icon {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+

@@ -3,17 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flickr Photo Search</title>
-        <link rel="stylesheet" href="style.css">
-        <script type='text/javascript' src='myconfig.js'></script>
-        <script type='text/javascript' src='flickr.js' defer></script>
+    <title>Flickr City Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script type="text/javascript" src="myconfig.js"></script>
+    <script type="text/javascript" src="cityExplorer.js" defer></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
-    <h1>Search for Photos on Flickr</h1>
-    <input type="text" id="searchInput" placeholder="Enter a keyword" />
-    <button id = "searchBtn">Search</button>
+    <h1>Qual cidade desejas pesquisar?</h1>
+    <input type="text" id="searchInput" placeholder="Digite o nome de uma cidade" />
+    <button id="searchBtn">Pesquisar</button>
+    
+    <!-- Contêiner de mensagens de erro -->
+    <div id="error-messages" class="error-container" style="display: none;"></div>
 
+    <div id="info-container">
+        <div id="weather" class="card">
+            <div class="spinner"></div>
+        </div>
+        <div id="country" class="card">
+            <div class="spinner"></div>
+        </div>
+        <div id="geo" class="card" style="height: 365px;">
+            <div class="spinner"></div>
+        </div>
+        <div id="coordinates" class="card">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    
+    <!-- Fotos -->
+    <h2 id="photosTitle" style="display: none;">Fotos da cidade: </h2>
     <div id="photos"></div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Página carregada com sucesso!");
+        });
+    </script>
 </body>
 </html>
+
