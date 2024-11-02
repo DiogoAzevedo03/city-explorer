@@ -1,6 +1,6 @@
 # City Explorer
 
-Uma aplicação web que permite ao utilizador explorar informações detalhadas sobre cidades, exibindo o clima, dados do país, coordenadas geográficas, mapa interativo e fotos. O projeto faz uso de várias APIs REST para fornecer uma experiência informativa e visualmente apelativa.
+Uma aplicação web que permite ao utilizador explorar informações detalhadas sobre cidades, exibindo clima, dados do país, coordenadas geográficas, mapa interativo e fotos. O projeto faz uso de várias APIs REST para fornecer uma experiência informativa e visualmente apelativa.
 
 ## Índice
 
@@ -20,7 +20,7 @@ Uma aplicação web que permite ao utilizador explorar informações detalhadas 
 
 ## Descrição
 
-City Explorer é um mashup que combina dados de várias APIs para exibir informações relevantes sobre qualquer cidade do mundo. O utilizador pode introduzir o nome de uma cidade e receber:
+City Explorer é uma aplicação que combina dados de várias APIs para exibir informações relevantes sobre qualquer cidade do mundo. Ao introduzir o nome de uma cidade, o utilizador recebe:
 - **Clima Atual**: Temperatura e descrição do clima.
 - **Informações do País**: Detalhes sobre o país da cidade, como capital, população, idioma e moeda.
 - **Coordenadas Geográficas**: Latitude e longitude da cidade.
@@ -50,11 +50,11 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
 
 ## APIs Utilizadas
 
-- **Flickr API**: Fotos relacionadas à cidade.
-- **OpenWeatherMap API**: Dados climáticos da cidade.
-- **GeoNames API**: Coordenadas geográficas da cidade.
-- **RestCountries API**: Dados sobre o país da cidade.
-- **OpenStreetMap/Leaflet**: Mapa interativo para localização.
+- **Flickr API**: Fornece fotos relacionadas à cidade.
+- **OpenWeatherMap API**: Fornece dados climáticos da cidade.
+- **GeoNames API**: Fornece coordenadas geográficas da cidade.
+- **RestCountries API**: Fornece dados sobre o país da cidade.
+- **OpenStreetMap/Leaflet**: Exibe um mapa interativo para a localização da cidade.
 
 ## Pré-requisitos e Configuração
 
@@ -66,7 +66,7 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
      ```
 
 2. **Configuração das Chaves de API**:
-   - Registre-se e obtenha chaves para as seguintes APIs:
+   - Registe-se e obtenha chaves para as seguintes APIs:
      - [Flickr API](https://www.flickr.com/services/api/)
      - [OpenWeatherMap API](https://home.openweathermap.org/api_keys)
      - [GeoNames API](https://www.geonames.org/)
@@ -81,12 +81,19 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
      ```
    - **Nota**: Inclua `myconfig.js` no `.gitignore` para proteger suas chaves.
 
-3. **Executando o Projeto**:
-   - Execute na pasta do projeto:
+3. **Script de Build e Instalação**:
+   - No seu `package.json`, já incluímos o script `start` para inicializar o servidor com `http-server`. A execução do projeto pode ser feita com:
      ```bash
-     npx http-server
+     npm start
      ```
-   - Acesse `http://localhost:8080` no navegador.
+   - O comando acima inicia o servidor na porta `8000`, permitindo acesso local à aplicação.
+
+4. **Executando o Projeto**:
+   - Na pasta do projeto, execute o comando:
+     ```bash
+     npm start
+     ```
+   - Acesse `http://localhost:8000` no navegador para ver a aplicação.
 
 ## Como Usar
 
@@ -97,7 +104,7 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
 
 - `index.html`: Estrutura do HTML da aplicação.
 - `style.css`: Estilos e animações.
-- `cityExplrer.js`: Script principal que integra as APIs e manipula os dados.
+- `cityExplorer.js`: Script principal que integra as APIs e manipula os dados.
 - `myconfig.js`: Contém as chaves de API (não incluir no GitHub).
 - `package.json`: Dependências e scripts.
 
@@ -112,9 +119,8 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
 - **Mensagens de Erro Personalizadas**: Mostra mensagens específicas quando a cidade não é encontrada ou ocorre erro de rede.
 - **Tratamento de Erros de Rede**: Captura erros de rede e notifica o utilizador.
 
-
 ## Autores e Repositório
 
-- **Autores**: [Diogo Azevedo, Leticia Loureiro ]
+- **Autores**: [Diogo Azevedo, Letícia Loureiro]
 - **Repositório GitHub**: [link_do_repositorio]
 - **Endereço da Aplicação**: [link_para_render.com]
