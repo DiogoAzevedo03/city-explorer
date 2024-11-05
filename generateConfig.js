@@ -12,10 +12,11 @@ const configContent = `
 `;
 
 // Salva o conteúdo no arquivo config.js
-fs.writeFileSync('./config.js', configContent, (err) => {
+fs.writeFileSync('./myconfig.js', configContent, (err) => {
     if (err) {
-        console.error('Erro ao gerar config.js:', err);
+        console.error('Erro ao gerar myconfig.js:', err);
     } else {
-        console.log('config.js gerado com sucesso!');
+        console.log('myconfig.js gerado com sucesso!');
     }
 });
+
