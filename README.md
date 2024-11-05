@@ -1,6 +1,6 @@
 # City Explorer
 
-Uma aplicação web que permite ao utilizador explorar informações detalhadas sobre cidades, exibindo clima, dados do país, coordenadas geográficas, mapa interativo e fotos. O projeto faz uso de várias APIs REST para fornecer uma experiência informativa e visualmente apelativa.
+City Explorer é uma aplicação web que permite ao utilizador explorar informações detalhadas sobre cidades, exibindo clima, dados do país, coordenadas geográficas, mapa interativo e fotos. O projeto faz uso de várias APIs REST para fornecer uma experiência informativa e visualmente apelativa.
 
 ## Índice
 
@@ -29,7 +29,7 @@ City Explorer é uma aplicação que combina dados de várias APIs para exibir i
 
 ## Objetivo e Motivação
 
-O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em uma aplicação coesa e informativa. Este projeto serve como uma referência para explorar o uso de APIs em JavaScript e oferece um recurso valioso para explorar dados geográficos.
+O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em uma aplicação coesa e informativa. Este projeto serve como uma referência para explorar o uso de APIs em JavaScript e oferece um recurso valioso para visualizar dados geográficos.
 
 ## Funcionalidades
 
@@ -65,12 +65,13 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
      npm install http-server
      ```
 
-2. **Configuração das Chaves de API**:
-   - Registe-se e obtenha chaves para as seguintes APIs:
-     - [Flickr API](https://www.flickr.com/services/api/)
-     - [OpenWeatherMap API](https://home.openweathermap.org/api_keys)
-     - [GeoNames API](https://www.geonames.org/)
-   - Insira as chaves no arquivo `myconfig.js`:
+2. **Configuração das Chaves de API (Ambiente de Produção)**:
+   - **Render.com**: Se você estiver hospedando no Render, configure as chaves de API como variáveis de ambiente:
+     - `FLICKR_API_KEY`, `FLICKR_API_SECRET`, `WEATHER_API_KEY`, `GEONAMES_USERNAME`
+   - As variáveis de ambiente são configuradas automaticamente no `generateConfig.js` para gerar o arquivo `config.js` usado na aplicação.
+
+3. **Configuração das Chaves de API (Ambiente Local)**:
+   - Para testes locais, crie um arquivo `myconfig.js` na pasta do projeto com o seguinte conteúdo:
      ```javascript
      const myconfig = {
        MY_KEY: "SUA_CHAVE_FLICKR",
@@ -79,21 +80,21 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
        GEONAMES_USERNAME: "SEU_USERNAME_GEONAMES"
      };
      ```
-   - **Nota**: Inclua `myconfig.js` no `.gitignore` para proteger suas chaves.
+   - **Nota**: Inclua `myconfig.js` no `.gitignore` para proteger suas chaves e evitar que sejam enviadas ao repositório.
 
-3. **Script de Build e Instalação**:
+4. **Script de Build e Instalação**:
    - No seu `package.json`, já incluímos o script `start` para inicializar o servidor com `http-server`. A execução do projeto pode ser feita com:
      ```bash
      npm start
      ```
-   - O comando acima inicia o servidor na porta `8000`, permitindo acesso local à aplicação.
+   - O comando acima inicia o servidor na porta `8080`, permitindo acesso local à aplicação.
 
-4. **Executando o Projeto**:
+5. **Executando o Projeto**:
    - Na pasta do projeto, execute o comando:
      ```bash
      npm start
      ```
-   - Acesse `http://localhost:8000` no navegador para ver a aplicação.
+   - Acesse `http://localhost:8080` no navegador para ver a aplicação.
 
 ## Como Usar
 
@@ -105,7 +106,9 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
 - `index.html`: Estrutura do HTML da aplicação.
 - `style.css`: Estilos e animações.
 - `cityExplorer.js`: Script principal que integra as APIs e manipula os dados.
-- `myconfig.js`: Contém as chaves de API (não incluir no GitHub).
+- `generateConfig.js`: Script para gerar o arquivo `config.js` com as chaves de API a partir das variáveis de ambiente.
+- `config.js`: Arquivo gerado dinamicamente com as chaves de API (no ambiente de produção).
+- `myconfig.js`: Contém as chaves de API para uso local (não incluir no GitHub).
 - `package.json`: Dependências e scripts.
 
 ## Estilos e Animações
@@ -121,6 +124,6 @@ O objetivo do projeto é demonstrar a integração de múltiplas APIs REST em um
 
 ## Autores e Repositório
 
-- **Autores**: [Diogo Azevedo, Letícia Loureiro]
+- **Autores**: Diogo Azevedo, Letícia Loureiro
 - **Repositório GitHub**: [link_do_repositorio]
 - **Endereço da Aplicação**: [link_para_render.com]
