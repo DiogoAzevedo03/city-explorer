@@ -8,10 +8,9 @@ const configContent = `
         MY_KEY_WEATHER: "${process.env.WEATHER_API_KEY}",
         GEONAMES_USERNAME: "${process.env.GEONAMES_USERNAME}"
     };
-    export default myconfig;
 `;
 
-// Salva o conteúdo no arquivo config.js
+// Salva o conteúdo no arquivo myconfig.js
 fs.writeFileSync('./myconfig.js', configContent, (err) => {
     if (err) {
         console.error('Erro ao gerar myconfig.js:', err);
