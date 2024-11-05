@@ -166,7 +166,7 @@ function searchCountryInfo(countryCode) {
 
 // Função para buscar dados geográficos (GeoNames API)
 function searchGeoInfo(city) {
-    const url = `http://api.geonames.org/searchJSON?q=${city}&maxRows=1&username=${geonamesUsername}`;
+    const url = `https://secure.geonames.org/searchJSON?q=${city}&maxRows=1&username=${geonamesUsername}`;
     
     fetch(url)
         .then(response => {
@@ -189,6 +189,7 @@ function searchGeoInfo(city) {
             document.getElementById('geo').innerHTML = `<p>Erro ao carregar o mapa</p>`;
         });
 }
+
 
 
 // Função para exibir o mapa
